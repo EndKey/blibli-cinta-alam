@@ -5,7 +5,18 @@
   },
   "cinta-bumi": {
     "title": "#AksiCintaBumi",
-    "greeting": "Halo, {0}!",
-    "go-to-top-page": "Kembali ke atas"
+    "greeting": "Hi, {0}!",
+    "go-to-top-page": "Kembali ke atas",
+    "thank-you": "Thank you so much for joining #AksiCintaBumi",
+    "total-average-carbon-footprint-info": "Total average carbon footprint in ",
+    "number-trees-info": "Number of trees that you've planted",
+    "tons": "3,7 Tons",
+    "trees": "tree(s)",
+    "offset": "≈ offset to",
+    "kg": "Kg",
+    "co2" : "of Carbon Dioxide",
+    "loyalty-info": "Let's reduce carbon offset and get 20 points per 1 tree!",
+    "claim": "Claim"
+
   }
 }

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import member from './modules/member'
+import backend from './modules/backend'
 
 Vue.use(Vuex)
 
@@ -8,7 +9,8 @@ Vue.use(Vuex)
 let store = {}
 
 const modules = {
-  'cinta-bumi.member': member
+  'cinta-bumi.member': member,
+  'cinta-bumi.backend': backend
 }
 
 // add to main store if available

@@ -9,6 +9,12 @@ module.exports = {
     },
     member: {
       profile: '/backend/member/profile'
+    },
+    backend: {
+      user: '/backend/cintaBumi/findUserDetailById',
+      projectList: '/backend/cintaBumi/getProjectsList',
+      historyList: '/backend/cintaBumi/findHistoryListByUserId',
+      claimRewards: '/backend/cintaBumi/claimUnclaimedRewards'
     }
   },
   pages: {

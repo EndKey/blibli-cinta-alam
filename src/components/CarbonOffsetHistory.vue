@@ -2,26 +2,27 @@
   <div class="carbon-offset-history">
     <div class="carbon-offset-history__top">
       <div class="carbon-offset-history__top__title">
-        Riwayat Jejak Karbon
+        {{ $t('cinta-bumi.carbon-footprint-history') }}
       </div>
     </div>
+
     <BliList>
-      <BliListContent v-for="n in 30" :value="n.toString()" :key="n">
+      <BliListContent v-for="(historyList, n) in this.historyList" :value="n.toString()" :key="n">
         <div class="history-wrapper">
           <div class="history-left">
             <div class="history-left__top">
-              List Item {{ n }} 1
+              {{historyList.description}}
             </div>
             <div class="history-left__bottom">
-              11 March 2022, 16:45 WIB
+              {{waktu(historyList.timestamp)}}
             </div>
           </div>
           <div class="history-right">
             <div class="history-right__top">
-              Rp{{ n }} 3
+              Rp{{historyList.price}}
             </div>
             <div class="history-right__bottom">
-              ≈ {{ n }} trees
+              ≈ {{historyList.trees}} trees
             </div>
           </div>
         </div>

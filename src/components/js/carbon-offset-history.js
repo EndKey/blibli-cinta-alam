@@ -1,11 +1,11 @@
-import { mapGetters } from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
+import { epochToDateWithTimeFormat } from '@/utils/date'
+
 
 export default {
-  name: 'ProjectSection',
+  name: 'CarbonOffsetHistory',
   data () {
     return {
-      percent1: 80,
-      percent2: 20
     }
   },
   computed: {
@@ -13,19 +13,42 @@ export default {
       'currentUser',
       'isMobile'
     ]),
+    ...mapGetters('cinta-bumi.backend', [
+      'historyList',
+      'historyListLength'
+    ]),
     components () {
 
+    },
+    waktu () {
+      var vm = this;
+      return function (salut) {
+        return epochToDateWithTimeFormat(salut) + ' WIB';
+      };
+    },
+    fullName: function () {
+      var vm = this;
+      return function (salut) {
+        return salut + ' ' + vm.firstName + ' ' + vm.lastName;
+      };
     }
   },
   methods: {
     initPage () {
-      // ignore
+      this.getHistoryList({
+        success: this.successAlert,
+        fail: this.failAlert
+      })
     },
-    assetPercentage (percentage) {
-      return `${percentage}%`
-    }
+    successAlert () {
+      console.log('success nihhh')
+    },
+    failAlert() {
+      console.log('fail')
+    },
+    ...mapActions('cinta-bumi.backend', ['getHistoryList'])
   },
-  mounted () {
+  created () {
     this.initPage()
   }
 }

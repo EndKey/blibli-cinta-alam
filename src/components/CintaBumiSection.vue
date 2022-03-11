@@ -2,10 +2,10 @@
   <div class="cinta-bumi-section">
     <div class="cinta-bumi-section__header">
       <div class="cinta-bumi-section__header__welcome">
-        Hi, {{ memberProfile.name }}!
+        {{ fullName }}
       </div>
       <div class="cinta-bumi-section__header__thankyou">
-        Thank you so much for joining #AksiCintaBumi
+        {{ $t('cinta-bumi.thank-you') }}
       </div>
       <carbon-footprint-card/>
       <unclaimed-point-card/>

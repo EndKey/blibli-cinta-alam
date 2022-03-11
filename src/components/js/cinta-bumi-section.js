@@ -45,6 +45,10 @@ export default {
           noButton: true
         }
       }
+    },
+    fullName () {
+      return this.$t('cinta-bumi.greeting',
+          [this.memberProfile.name])
     }
   },
   methods: {

@@ -12,4 +12,8 @@ const isEmpty = (value) => {
   return value === '' || value === null || typeof value === 'undefined'
 }
 
-export { trimWithDots , isEmpty}
+const numbersWithDot = (value) => {
+  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+export { trimWithDots , isEmpty, numbersWithDot}
