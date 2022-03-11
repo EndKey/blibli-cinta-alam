@@ -1,0 +1,11 @@
+{
+  "default": {
+    "error": {
+    }
+  },
+  "cinta-bumi": {
+    "title": "#AksiCintaBumi",
+    "greeting": "Halo, {0}!",
+    "go-to-top-page": "Kembali ke atas"
+  }
+}

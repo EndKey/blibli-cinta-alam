@@ -1,0 +1,12 @@
+@mixin device($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: $mobile) { @content };    //<768px
+    @media only screen and (max-width: $mobile-landscape) and (orientation: landscape) { @content };    //<1023px and landscape
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: $tablet-max) and (min-width: $tablet-min) { @content };     //768px - 1024px
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: $desktop) { @content };   //>1024px
+  }
+}
