@@ -18,8 +18,11 @@
             </div>
           </div>
           <div class="history-right">
-            <div class="history-right__top">
-              Rp{{historyList.price}}
+            <div class="history-right__top" v-if="historyList.description !== 'Box Returned'">
+              Rp{{price(historyList.price)}}
+            </div>
+            <div class="history-right__top" v-else>
+              {{price(historyList.amount)}} Box
             </div>
             <div class="history-right__bottom">
               ≈ {{historyList.trees}} trees

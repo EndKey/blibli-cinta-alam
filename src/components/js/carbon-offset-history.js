@@ -1,5 +1,6 @@
 import {mapActions, mapGetters} from 'vuex'
 import { epochToDateWithTimeFormat } from '@/utils/date'
+import { numbersWithDot } from '@/utils/text'
 
 
 export default {
@@ -24,6 +25,12 @@ export default {
       var vm = this;
       return function (salut) {
         return epochToDateWithTimeFormat(salut) + ' WIB';
+      };
+    },
+    price () {
+      var vm = this;
+      return function (salut) {
+        return numbersWithDot(salut);
       };
     },
     fullName: function () {
