@@ -6,7 +6,20 @@
   },
   "cinta-bumi": {
     "title": "#AksiCintaBumi",
-    "greeting": "Halo, {0}!",
-    "go-to-top-page": "Kembali ke atas"
+    "greeting": "Hi, {0}!",
+    "go-to-top-page": "Kembali ke atas",
+    "thank-you": "Terima kasih sudah mau ikut #AksiCintaBumi!",
+    "total-average-carbon-footprint-info": "Jumlah rata-rata carbon footprint di ",
+    "number-trees-info": "Jumlah pohon yang sudah kamu tanam",
+    "tons": "3,7 Ton",
+    "trees": "Pohon",
+    "offset": "≈ mengimbangi",
+    "kg": "Kg",
+    "co2" : "Karbon Dioksida",
+    "loyalty-info": "Yuk kurangi carbon offset dan dapatkan 20 point per 1 pohon!",
+    "claim": "Klaim",
+    "project-header": "Proyek saat ini",
+    "project-deadline": "pohon sudah terkumpul dan akan ditanam tanggal",
+    "carbon-footprint-history": "Riwayat Jejak Karbon"
   }
 }

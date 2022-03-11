@@ -4,6 +4,10 @@ const epochToDateFormat = (value) => {
   return new Date(value).format('DD MMM YYYY')
 }
 
+const epochToDateWithTimeFormat = (value) => {
+  return new Date(value).format('DD MMMM YYYY, hh:mm')
+}
+
 const epochToRewardDateFormat = (value) => {
   return new Date(value).format('D MMM YYYY')
 }
@@ -50,6 +54,7 @@ const loyaltyExpiredDate = () => {
 }
 export {
   epochToDateFormat,
+  epochToDateWithTimeFormat,
   epochToRewardDateFormat,
   rewardsHistoryDate,
   loyaltyExpiredDate,

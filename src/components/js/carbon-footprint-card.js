@@ -1,4 +1,4 @@
-import { mapGetters } from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
 import { disableScrollLock, enableScrollLock } from '@/utils/body'
 import { BliModal, BliModalBody } from '@blibli/dls/dist/components/modal'
 import { BliBottomsheet, BliBottomsheetContainer } from '@blibli/dls/dist/components/bottomsheet'
@@ -9,7 +9,8 @@ export default {
   name: 'CarbonFootprintCard',
   data () {
     return {
-      visibleModalCalculationInfo: false
+      visibleModalCalculationInfo: false,
+      dataList: [{}]
     }
   },
   computed: {
@@ -17,6 +18,7 @@ export default {
       'currentUser',
       'isMobile'
     ]),
+    ...mapGetters('cinta-bumi.backend', ['backendUser']),
     components () {
       if (this.isMobile) {
         return {
@@ -45,8 +47,18 @@ export default {
   },
   methods: {
     initPage () {
-      // ignore
+      this.getBackendUser({
+        success: this.successAlert,
+        fail: this.failAlert
+      })
     },
+    successAlert () {
+      console.log('sukses')
+    },
+    failAlert() {
+      console.log('fail')
+    },
+    ...mapActions('cinta-bumi.backend', ['getBackendUser']),
     openModalCalculationInfo () {
       this.visibleModalCalculationInfo = true
       enableScrollLock()
@@ -56,7 +68,7 @@ export default {
       disableScrollLock()
     }
   },
-  mounted () {
+  created () {
     this.initPage()
   },
   watch: {

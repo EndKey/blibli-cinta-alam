@@ -6,17 +6,19 @@
           <div class="bli-card-blue__wrapper__info">
             <div class="total-carbon-footprint">
               <div class="top-info">
-                <div>Total average carbon footprint in </div>
+                <div>
+                  {{ $t('cinta-bumi.total-average-carbon-footprint-info') }}
+                </div>
                 <img class="ind-logo" src="@/assets/images/icons/ind.png"/>
               </div>
-              <strong>3,7 Tons</strong>
+              <strong>{{ $t('cinta-bumi.tons') }}</strong>
             </div>
             <div class="total-tree-planted">
-              <div>Number of trees that you've planted</div>
-              <strong>1 tree(s)</strong>
+              <div>{{ $t('cinta-bumi.number-trees-info') }}</div>
+              <strong>{{backendUser.treesPlanted}} {{ $t('cinta-bumi.trees') }}</strong>
             </div>
             <div class="tree-info">
-              <div class="tree-info__text">≈ offset to <span style="font-weight:bold;">21.77 Kg</span> of Carbon Dioxide</div>
+              <div class="tree-info__text">{{ $t('cinta-bumi.offset') }} <span style="font-weight:bold;">{{backendUser.carbonOffset}} {{ $t('cinta-bumi.kg') }}</span> {{ $t('cinta-bumi.co2') }}</div>
               <div class="tree-info__info-icon" @click="openModalCalculationInfo">
                 <BliIconInformation></BliIconInformation>
               </div>
@@ -173,6 +175,10 @@
       &__info-icon {
         cursor: pointer;
       }
+    }
+
+    .b-disabled {
+      background-color: red !important;
     }
   }
 </style>

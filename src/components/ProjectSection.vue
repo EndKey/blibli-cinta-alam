@@ -2,7 +2,7 @@
   <div class="project-section">
     <div class="project-section__top">
       <div class="project-section__top__title">
-        Proyek saat ini
+        {{ $t('cinta-bumi.project-header') }}
       </div>
       <div class="leaf-logo">
         <img src="@/assets/images/icons/leaf-green.png"/>
@@ -13,10 +13,10 @@
       <BliCardContent class="bli-card-project-wrapper">
         <div class="bli-card-project-wrapper__address">
           <div class="bli-card-project-wrapper__city">
-            Kota Rembang, Jawa Tengah, Indonesia
+            {{city}}
           </div>
           <div class="bli-card-project-wrapper__street">
-            Jalan Rembang – Blora Km 5
+            {{streetName}}
           </div>
         </div>
         <div class="bli-card-project-wrapper__progress-bar">
@@ -31,9 +31,9 @@
         </div>
         <div class="bli-card-project-wrapper__progress-bar-info">
           <span class="trees">
-            150
-          </span> pohon sudah terkumpul dan akan ditanam tanggal <span class="deadline">
-            06 Maret 2022</span>
+            {{numberTreesPlanted}}
+          </span> {{ $t('cinta-bumi.project-deadline') }} <span class="deadline">
+            {{deadline}}</span>
         </div>
       </BliCardContent>
     </BliCard>

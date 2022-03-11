@@ -1,15 +1,21 @@
 <template>
   <div class="unclaimed-point-card">
-    <BliCard class="bli-card-grey-light" no-shadow>
+    <BliCard :class="{'bli-card-green': isClaimable,
+            'bli-card-grey-light': !isClaimable,
+            'bli-card-blue-light': isButtonClaimClicked}" no-shadow>
+
       <BliCardContent class="unclaimed-point-card-content">
         <div class="unclaimed-point-card-content__info">
           <div class="point-logo">
             <img src="@/assets/images/icons/gold.png"/>
           </div>
-          <div class="point-info">Keep offseting your carbon footprint 1 tree = 40poin!</div>
+          <div class="point-info">{{ $t('cinta-bumi.loyalty-info') }}</div>
         </div>
         <div class="unclaimed-point-card-content__button">
-          <BliButton class="claim-button" disabled> Claim </BliButton>
+          <BliButton class="claim-button"
+                     @click="isButtonClicked()"
+                     :disabled="!isClaimable || isButtonClaimClicked"
+                     :color="isButtonAvailable"> {{ $t('cinta-bumi.claim') }} </BliButton>
         </div>
       </BliCardContent>
     </BliCard>
@@ -23,12 +29,15 @@
   @import '@blibli/blue-tokens/dist/blue-tokens.scss';
 
   .bli-card-grey-light {
-    background: #F1F1F1;
+    background: #d6d6d6;
   }
 
-  >>> .blu-btn{
-    background-color: #F1F1F1;
-    border-color: #F1F1F1;
+  .bli-card-green {
+    background: #CAE5A8;
+  }
+
+  .bli-card-blue-light {
+    background: #DAF3FF;
   }
 
   .point-logo {
