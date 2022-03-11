@@ -5,7 +5,7 @@ import {
 } from '@/data/components'
 
 export default {
-  name: 'Cinta Bumi',
+  name: 'CintaBumi',
   data () {
     return {
       visibleStickyCategory: false,
@@ -14,7 +14,6 @@ export default {
   },
   computed: {
     ...mapGetters(['isMobile']),
-    ...mapGetters('cinta-bumi.common', ['memberConfig']),
     scrollTopRef () {
       return this.$refs.observerElementScrollTop
     }
@@ -26,29 +25,6 @@ export default {
       'showHeader',
       'showFooter'
     ]),
-    ...mapActions('cinta-bumi.common', [
-      'getMemberConfigs'
-    ]),
-    initObserverSticky () {
-      this.observer = new IntersectionObserver(([entry]) => {
-        if (!entry.isIntersecting) {
-          this.visibleStickyCategory = true
-        } else {
-          this.visibleStickyCategory = false
-        }
-      })
-      this.observer.observe(this.categoryRef)
-    },
-    initObserverScrollTop () {
-      this.observer = new IntersectionObserver(([entry]) => {
-        if (!entry.isIntersecting) {
-          this.visibleScrollTop = true
-        } else {
-          this.visibleScrollTop = false
-        }
-      })
-      this.observer.observe(this.scrollTopRef)
-    },
     goToTopPage () {
       scrollToTop()
     },
@@ -72,14 +48,9 @@ export default {
     CintaBumiSection
   },
   mounted () {
-    this.$nextTick(() => {
-      this.initObserverSticky()
-      this.initObserverScrollTop()
-    })
     disableScrollRestoration()
   },
   created () {
-    this.getMemberConfigs()
     this.hideHeaderFooter()
   },
   destroyed () {

@@ -2,14 +2,15 @@
   <div class="cinta-bumi-section">
     <div class="cinta-bumi-section__header">
       <div class="cinta-bumi-section__header__welcome">
-        Hi, Rizki!
+        Hi, {{ memberProfile.name }}!
       </div>
       <div class="cinta-bumi-section__header__thankyou">
         Thank you so much for joining #AksiCintaBumi
       </div>
       <carbon-footprint-card/>
       <unclaimed-point-card/>
-
+      <project-section/>
+      <carbon-offset-history/>
     </div>
 
   </div>
@@ -41,14 +42,14 @@
       }
       &__thankyou {
         @include device(desktop) {
-          font: $blu-title-2;
+          font: $blu-subtitle-2;
           margin-bottom: 10px;
         }
         @include device(tablet) {
-          font: $blu-heading-2;
+          font: $blu-subtitle-2;
         }
         @include device(mobile) {
-          font: $blu-subtitle-2;
+          font: $blu-body-text-1;
           margin-bottom: 10px;
         }
       }

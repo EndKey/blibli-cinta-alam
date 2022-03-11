@@ -4,7 +4,7 @@ import { disableScrollLock, enableScrollLock } from '@/utils/body'
 const MODAL_WIDTH = 944
 
 export default {
-  name: 'RewardCard',
+  name: 'UnclaimedPointCard',
   data () {
     return {
       visibleModalCalculationInfo: false

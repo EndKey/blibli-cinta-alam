@@ -6,7 +6,7 @@ import { BliBottomsheet, BliBottomsheetContainer } from '@blibli/dls/dist/compon
 const MODAL_WIDTH = 944
 
 export default {
-  name: 'RewardCard',
+  name: 'CarbonFootprintCard',
   data () {
     return {
       visibleModalCalculationInfo: false

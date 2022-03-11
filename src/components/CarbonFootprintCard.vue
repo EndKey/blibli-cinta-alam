@@ -5,7 +5,10 @@
         <div class="bli-card-blue__wrapper">
           <div class="bli-card-blue__wrapper__info">
             <div class="total-carbon-footprint">
-              <div>Total average carbon footprint in </div>
+              <div class="top-info">
+                <div>Total average carbon footprint in </div>
+                <img class="ind-logo" src="@/assets/images/icons/ind.png"/>
+              </div>
               <strong>3,7 Tons</strong>
             </div>
             <div class="total-tree-planted">
@@ -106,7 +109,7 @@
         font: $blu-title-2;
         line-height: 24px;
         margin-bottom: 16px;
-        margin-right: 16px;
+        margin-right: 24px;
       }
       @include device(tablet) {
         font: $blu-title-2;
@@ -119,13 +122,22 @@
         margin-bottom: 16px;
       }
     }
+    .top-info{
+      display: flex;
+      justify-content: space-between;
+      .ind-logo{
+        width: 16px;
+        height: 16px;
+        margin-left: 8px;
+      }
+    }
 
     .total-tree-planted {
       @include device(desktop) {
         font: $blu-title-2;
         line-height: 24px;
         margin-bottom: 8px;
-        margin-right: 16px;
+        margin-right: 24px;
       }
       @include device(tablet) {
         font: $blu-title-2;

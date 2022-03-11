@@ -1,5 +1,10 @@
-import { mapGetters } from 'vuex'
-import { CarbonFootprintCard, UnclaimedPointCard } from '@/data/components'
+import { mapGetters, mapActions } from 'vuex'
+import {
+  CarbonFootprintCard,
+  UnclaimedPointCard,
+  ProjectSection,
+  CarbonOffsetHistory
+} from '@/data/components'
 import { BliModal, BliModalBody } from '@blibli/dls/dist/components/modal'
 import { BliBottomsheet, BliBottomsheetContainer } from '@blibli/dls/dist/components/bottomsheet'
 
@@ -9,6 +14,8 @@ export default {
   name: 'CintaBumiSection',
   data () {
     return {
+      userName: '',
+      dataReturn: []
     }
   },
   computed: {
@@ -16,6 +23,7 @@ export default {
       'currentUser',
       'isMobile'
     ]),
+    ...mapGetters('cinta-bumi.member', ['memberProfile']),
     components () {
       if (this.isMobile) {
         return {
@@ -40,11 +48,21 @@ export default {
     }
   },
   methods: {
+    ...mapActions('cinta-bumi.member', ['getMemberProfile']),
     initPage () {
-
+      this.getMemberProfile({
+        success: this.successAlert,
+        fail: this.failAlert
+      })
+    },
+    successAlert () {
+      console.log('sukses')
+    },
+    failAlert() {
+      console.log('fail')
     }
   },
-  mounted () {
+  created () {
     this.initPage()
   },
   components: {
@@ -53,6 +71,8 @@ export default {
     BliBottomsheet,
     BliBottomsheetContainer,
     CarbonFootprintCard,
-    UnclaimedPointCard
+    UnclaimedPointCard,
+    ProjectSection,
+    CarbonOffsetHistory
   }
 }
